@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" integrity="sha512-pZlKGs7nEqF4zoG0egeK167l6yovsuL8ap30d07kA5AJUq+WysFlQ02DLXAmN3n0+H3JVz5ni8SJZnrOaYXWBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/res.css">
+  <link rel="stylesheet" href="css/medilab.css">
+
+
+  <style>
+    body {
+      background-image: url(images/loginbg.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      /* display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; */
+    }
+
+   .main {
+      position: relative;
+      width: 40rem ;
+      margin: auto;
+      color: whitesmoke;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(11, 15, 13, 0.582);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.125);
+      padding: 20px 25px;
+    }
+
+    input[type=email],
+    input[type=password] {
+      width: 100%;
+      margin: 10px 0;
+      border-radius: 5px;
+      padding: 15px 18px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #176bb4;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 5px;
+      margin: 7px 0;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    .headingsContainer {
+      text-align: center;
+    }
+
+    .headingsContainer p {
+      color: gray;
+    }
+
+    .mainContainer {
+      padding: 16px;
+    }
+
+
+    .subcontainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .subcontainer a {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    span.forgotpsd a {
+      float: right;
+      color: whitesmoke;
+      padding-top: 16px;
+    }
+
+    .forgotpsd a {
+      color: rgb(33, 30, 240);
+    }
+
+    .forgotpsd a:hover {
+      color: rgb(226, 26, 26);
+    }
+
+
+    .forgotpsd a:link {
+      text-decoration: none;
+    }
+
+    .register {
+      color: white;
+      text-align: center;
+    }
+
+    .register a {
+      color: rgb(18, 5, 131);
+    }
+
+    .register a:hover {
+      text-decoration: underline;
+    }
+
+    .register a:link:hover {
+      text-decoration: none;
+    }
+
+    /* Media queries for the responsiveness of the page */
+    @media screen and (max-width: 600px) {
+      form {
+        width: 100% ;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      form {
+        width: 20rem !important;
+      }
+    }
+
+    .fa-xmark {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 25px;
+      color: #fff;
+    }
+
+    .errorMessage{
+    margin-top: .3rem;
+    font-size: .9rem;
+    font-weight: 600;
+    font-family: monospace;
+    color: red;
+}
+.signupbtn{
+  width: 94%;
+  margin-left: 16px;
+}
+.signupbtn a{
+  text-decoration: none;
+  color: #fff;
+}
+
+
+  </style>
+
+</head>
+
+<body>
+  <div class="main">
+  <form >
+    <a href="index.html"><i class="fa-solid fa-xmark"></i></a>
+    <h1>Login Page</h1>
+      
+    <div class="mainContainer">
+        <label for="email">Your Email</label>
+        <input type="email" placeholder="Enter Email"  id="email" required>
+        <div class="errorMessage"></div>
+
+        <label for="passwprd">Your password</label>
+        <input type="password" placeholder="Enter Password" id="password" required>
+        <div class="errorMessage"></div>
+
+        <div class="subcontainer">
+            <label>
+              <input type="checkbox" checked="checked" > Remember me
+            </label>
+            <p class="forgotpsd"> <a href="#">Forgot Password?</a></p>
+        </div>
+
+        <a href="index.html" style="text-decoration: none; color: #fff;"><button type="submit" >Login</button></a>
+    </div>
+  </form>
+  <a href="signup.html">
+    <button class="signupbtn" type="submit" name="signup">Sign Up!</button>
+  </a>
+  </div>
+  
+
+
+
+
+  <script src="js/medilab.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>            <!-- gsap -->
+
+  <script>
+    gsap.from("#myForm", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power2.inOut"
+  });
+</script>
+
+
+  <!-- <script>
+
+  const myForm = document.getElementById('myForm');
+  myForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevent form submission
+
+
+//Validate for email
+const email = myForm.elements.email.value.trim();
+    const emailError = document.querySelector('#email + .errorMessage');
+    const emailInput = document.getElementById('email');
+    if (email === '') {
+      emailError.textContent = 'Email is required.';
+      emailInput.parentNode.classList.add('error');
+      emailInput.parentNode.classList.remove('success');
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailError.textContent = 'Please enter a valid email address.';
+      emailInput.parentNode.classList.add('error');
+      emailInput.parentNode.classList.remove('success');
+    } else {
+      emailError.textContent = '';
+      emailInput.parentNode.classList.add('success');
+      emailInput.parentNode.classList.remove('error');
+    }
+
+
+    //Validate password
+    const password = myForm.elements.password.value.trim();
+    const passwordError = document.querySelector('#password + .errorMessage');
+    const passwordInput = document.getElementById('password');
+    if (password === '') {
+      passwordError.textContent = 'Password is required.';
+      passwordInput.parentNode.classList.add('error');
+      passwordInput.parentNode.classList.remove('success');
+    } else if (password.length < 8) {
+      passwordError.textContent = 'Password is expected to be 8 characters.';
+      passwordInput.parentNode.classList.add('error');
+      passwordInput.parentNode.classList.remove('success');
+    } else {
+      passwordError.textContent = '';
+      passwordInput.parentNode.classList.add('success');
+      passwordInput.parentNode.classList.remove('error');
+    }
+
+    if (emailError.textContent === '' && passwordError.textContent === '') {
+      myForm.submit();
+    }
+  });
+</script> -->
+  
+
+</body>
+
+</html>
